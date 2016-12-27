@@ -1,0 +1,144 @@
+
+<ion-nav-bar class="bar-light">
+    <ion-nav-title>
+        <h4>Dosnap · 多色</h4>
+    </ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button class="button button-clear icon icon-left ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-back-button class="button ">
+        <i class="ion-chevron-left"></i>
+    </ion-nav-back-button>
+</ion-nav-bar>
+<ion-tabs id="homeTabs" class="tabs-striped tabs-top">
+    <ion-tab icon-off="ion-ios-heart-outline" icon-on="ion-ios-heart">
+        <ion-view >
+            <ion-content>
+                <!--下拉刷新-->
+                <ion-refresher pulling-text="努力刷新中。。。" pulling-icon="icon ion-ios-loop-strong calm"
+                               on-refresh="reFresh()"></ion-refresher>
+                <ion-slide-box auto-play="true" does-continue="true"
+                               slide-interval='2000' active-slide="data.page"
+                               on-slide-changed="slideChanged(index)"
+                               pager-click="pagerClick(index)">
+                    <ion-slide>
+                        <div class="autoPic"><a href="#"><img src="images/mty01.jpg" alt=""></a></div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="autoPic"><a href="#"><img src="images/mty02.jpg" alt=""></a></div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="autoPic"><a href="#"><img src="images/mty03.jpg" alt=""></a></div>
+                    </ion-slide>
+                </ion-slide-box>
+
+                <ion-list>
+                    <ion-item ng-repeat="item in userData" class="itemMod">
+                        <div class="item-avatar">
+                            <img ng-src="{{item.avatar}}">
+                            <p>{{item.name}}</p><br>
+                            <p>{{item.navi}}</p>
+                            <p class="col-offset-50 text-right">{{item.sendTime}}</p>
+                        </div>
+                        <div class="item-image">
+                            <img ng-src="{{item.imgSrc}}" alt="">
+                            <h4 class="padding">{{item.message}}</h4><br>
+                            <span ng-repeat="tag in item.tag" class="tag">{{tag}}</span>
+                        </div>
+                        <br>
+                        <div class="badge" ng-model="item.likePerson">{{item.likePerson}}喜欢</div>
+                        <div class="row padding col-offset-50">
+                            <a class="button button-clear button-positive like col-13" href="#">
+                                <i class="ion-ios-more-outline"></i>
+                            </a>
+                            <a class="button button-clear button-positive like col-13" href="#">
+                                <i class="ion-ios-chatbubble-outline"></i>
+                            </a>
+                            <a ng-click="changeHeart(item)" class="button button-clear button-positive like col-13" href="#">
+                                <i ng-show="item.like" class="ion-ios-heart-outline"></i>
+                                <i ng-show="!item.like"  class="ion-ios-heart"></i>
+                            </a>
+                        </div>
+                    </ion-item>
+                </ion-list>
+                <!--无限滚动-->
+                <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+
+            </ion-content>
+        </ion-view>
+    </ion-tab>
+    <ion-tab  icon-off="ion-ios-star-outline" icon-on="ion-ios-star">
+        <ion-view>
+            <ion-content>
+                <ion-list>
+                    <ion-item class="itemMod" ng-repeat="item in userData">
+                        <div class="item-avatar collection">
+                            <img src="{{item.avatar}}">
+                            <h2 class="col-offset-50">{{item.name}}</h2>
+                                <span ng-show="item.followed"  ng-click="changeFollowed(item)"
+                                      class="col-offset-66 button button-light button-positive button-clear icon ion-ios-plus-outline"
+                                      style="margin: 20px; padding-left: 160px;"></span>
+                                <span ng-show="!item.followed"  ng-click="changeFollowed(item)"
+                                      class="col-offset-66 button button-light button-positive button-clear icon ion-ios-checkmark"
+                                      style="margin: 20px; padding-left: 160px;"></span>
+                        </div>
+                        <div class="item-image">
+                            <img src="images/mty02.jpg" alt="">
+                            <h4 class="padding">So cute~O(∩_∩)~</h4><br>
+                            <span ng-repeat="tag in item.tag" class="tag">{{tag}}</span>
+                        </div>
+                        <div class="row padding col-offset-50">
+                            <a class="button button-clear button-positive like col-13" href="#">
+                                <i class="ion-ios-more-outline"></i>
+                            </a>
+                            <a class="button button-clear button-positive like col-13" href="#">
+                                <i class="ion-ios-chatbubble-outline"></i>
+                            </a>
+                            <a ng-click="changeHeart(item)" class="button button-clear button-positive like col-13" href="#">
+                                <i ng-show="item.like" class="ion-ios-heart-outline"></i>
+                                <i ng-show="!item.like"  class="ion-ios-heart"></i>
+                            </a>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-view>
+    </ion-tab>
+    <ion-tab icon-off="ion-ios-location-outline" icon-on="ion-ios-location">
+        <ion-view>
+            <ion-content>
+                <ion-list class="list-borderless">
+                    <ion-item class="item-avatar neaby_item">
+                        <img src="images/mty01.jpg">
+                        <h2>Jackson</h2><br>
+                        <h4><i class="icon ion-ios-location-outline"></i>1.1Km</h4>
+                        <span ng-show="!heartTurn" ng-click="turn()"
+                              class="col-offset-66 button button-light button-positive button-clear icon ion-ios-plus-outline"
+                              style="margin: -20px; padding-left: 190px;"></span>
+                        <span ng-show="heartTurn" ng-click="turn()"
+                              class="col-offset-66 button button-light button-positive button-clear icon ion-ios-checkmark"
+                              style="margin: -20px; padding-left: 190px;"></span>
+                    </ion-item>
+                    <ion-item style="border-bottom: 1px solid darkgray" class="itemMod">
+                        <div class="row">
+                            <div class="col-33" style=""><img width="100%" src="images/mty01.jpg"></div>
+                            <div class="col-33"><img width="100%" src="images/mty02.jpg"></div>
+                            <div class="col-33"><img width="100%" src="images/mty03.jpg"></div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-view>
+    </ion-tab>
+
+    <div side="right" class="button button-clear button-outline icon-left" ui-sref="tabs.addFri" style=" position: fixed; right: -50px;">
+        <a class="icon ion-person dark ">添加</a>
+    </div>
+
+        <!--<ion-tab title="添加" icon-off="ion-ios-personadd-outline" icon-on="ion-ios-personadd">-->
+            <!--<ion-nav-view>-->
+                <!---->
+            <!--</ion-nav-view>-->
+        <!--</ion-tab>-->
+</ion-tabs>

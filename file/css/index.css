@@ -1,0 +1,103 @@
+* {
+    font-family: "Microsoft YaHei"
+}
+img{
+    display: block;
+}
+p,h1,h2,h3,h4,h5,span{
+    display: inline-block;
+}
+
+a[href="#follow"]:focus, a[href="#collection"]:focus, a[href="#nearby"]:focus, a[href="#add"]:focus {
+    border-bottom: 2px solid deepskyblue;
+}
+
+.autoPic a img {
+    width: 100%
+}
+
+.circleBtn {
+    width: 15px;
+    height: 15px;
+    opacity: 0.5;
+    background: grey;
+    border-radius: 50%;
+    float: left;
+    margin-left: 10px;
+}
+
+.circleBtns {
+    width: auto;
+    position: absolute;
+    left: 60%;
+    transform: translateX(-60%);
+    top: 26%;
+}
+.followedL .item{
+
+}
+.banner {
+    position: relative;
+}
+
+.prevAct {
+    height: 40px;
+    font-size: 20px;
+}
+.tag{
+    border: 1px lightgrey solid;
+    border-radius: 30%;
+    padding:3px;
+    margin:2px;
+    color: grey;
+    font-size: 12px;
+}
+.like i{
+    font-size: 30px;
+}
+.item-image{
+    text-align:left;
+}
+.collection i{
+    font-size: 30px;
+}
+.itemMod{
+    padding:10px 0 0 0;
+}
+.bradius{
+    text-align: center;
+    margin:10px;
+    border-radius:30px
+}
+.row img{
+    width:100%;
+    height:100%
+}
+.toTop{
+    position: fixed;
+    right:0;
+    bottom: 60px;
+    z-index: 10!important;
+}
+#homeTabs .tab-nav{
+    width:86%;
+}
+.bor_none{
+    border-bottom: 0px !important;
+    border-top: 0px !important;
+}
+.col{
+    padding:1px
+}
+.paddingMin{
+    padding-top:3px
+}
+.font10{
+    font-size: 10px !important;;
+}
+.padding1px{
+    padding:1px;
+}
+.slideBox{
+    text-align: center;
+}

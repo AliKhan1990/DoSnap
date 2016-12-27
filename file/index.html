@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="dosApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dosnap</title>
+    <meta name="viewport" content="maximum-scale=1,user-scale=no,width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/ionic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="../../lib/js/ionic.bundle.min.js"></script>
+    <script src="jQuery/jquery-3.1.0.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="views/home/home.js"></script>
+    <script src="views/addFri/addFri.js"></script>
+    <script src="views/personal/personal.js"></script>
+    <script src="views/followed/followed.js"></script>
+</head>
+<body ng-controller="dosCtrl">
+
+<ion-side-menus>
+    <!--中间内容部分-->
+    <ion-side-menu-content>
+        <!--<ion-nav-bar class="bar-light">-->
+        <!--<ion-nav-back-button class="button button-clear">-->
+        <!--<i class="ion-chevron-left"></i>-->
+        <!--</ion-nav-back-button>-->
+        <!--</ion-nav-bar>-->
+        <!--视图部分-->
+        <ion-nav-view>
+            <div id="toTop" ng-if="1" class="button button-clear button-calm toTop" ng-click="toTop()"><img src="images/top.png">
+            </div>
+        </ion-nav-view>
+    </ion-side-menu-content>
+    <!--左右页面-->
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-calm">
+            <h2 class="title">基于Ionic完成</h2>
+        </ion-header-bar>
+        <ion-content>
+            <a href="#" class="item item-icon-left" menu-close="">
+                <i class="icon ion-clipboard"></i>多色&reg
+            </a>
+            <a href="#" class="item item-icon-left" menu-close="">
+                <i class="icon ion-at"></i>Dosnap·多色
+            </a>
+            <a href="#" class="item item-icon-left" menu-close="">
+                <i class="icon ion-ios-person"></i>Ali Khan(韩啸宇)
+            </a>
+            <a href="#" class="item item-icon-left" menu-close="">
+                <i class="icon ion-ios-telephone"></i>15135198623
+            </a>
+            <a href="#" class="item item-icon-left" menu-close="">
+                <i class="icon ion-ios-at"></i>602244160@qq.com
+            </a>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+
+
+</body>
+</html>

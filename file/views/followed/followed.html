@@ -1,0 +1,128 @@
+<ion-view>
+    <ion-header-bar>
+        <h4 class="title"><i class="icon ion-"></i>我的关注</h4>
+    </ion-header-bar>
+
+    <ion-tabs class="tabs-icon-top tabs-striped tabs-top bor_none">
+        <ion-tab title="你" icon-off="ion-ios-glasses-outline" icon-on="ion-ios-glasses">
+            <ion-view>
+                <ion-content>
+                    <ion-list class="slideBox card">
+                        <ion-item style="font-size: 20em;">
+                            <ion-slide-box id="slideBox" auto-play="true" slide-interval='4000' does-continue="true"
+                                           show-pager="false" on-slide-changed="slideChange()"
+                                           pager-click="pageClick(index)"
+                                           active-slide="page"
+                                           class="has-footer">
+                                <ion-slide>
+                                    <i class="slideBox icon ion-map calm"></i><br>
+                                    <button class="button button-calm button-outline">我的足迹</button>
+                                </ion-slide>
+                                <ion-slide>
+                                    <i class="slideBox icon ion-ios-camera-outline assertive"></i><br>
+                                    <button  class="button button-calm button-outline">我的滤镜</button>
+                                </ion-slide>
+                                <ion-slide>
+                                    <i class="slideBox icon ion-images royal"></i><br>
+                                    <button  class="button button-calm button-outline">我的作品集</button>
+                                </ion-slide>
+                            </ion-slide-box>
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="动态" icon-off="ion-ios-flower-outline" icon-on="ion-ios-flower">
+            <ion-view>
+                <ion-content>
+                    <ion-list class="list card followedL">
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar1.jpg">
+                            <h2 class="padding">张无岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img01.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar2.jpg">
+                            <h2 class="padding">张一岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img02.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar3.jpg">
+                            <h2 class="padding">张二岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img03.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar4.jpg">
+                            <h2 class="padding">张三岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img04.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar5.jpg">
+                            <h2 class="padding">张四岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img05.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar5.jpg">
+                            <h2 class="padding">张五岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img06.jpg"></div>
+                        </ion-item><ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar5.jpg">
+                            <h2 class="padding">张六岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                        <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img07.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar5.jpg">
+                            <h2 class="padding">张无岁</h2><p class="padding">赞了</p><h2 class="padding">CeCe</h2><p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%" src="images/img08.jpg"></div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar5.jpg">
+                            <h2 class="padding">张无岁</h2>
+                            <p class="padding">赞了</p>
+                            <h2 class="padding">CeCe</h2>
+                            <p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%"
+                                                                                                      src="images/img08.jpg">
+                            </div>
+                        </ion-item>
+                        <ion-item class="item item-avatar">
+                            <img src="images/avatars/avatar5.jpg">
+                            <h2 class="padding">张无岁</h2>
+                            <p class="padding">赞了</p>
+                            <h2 class="padding">CeCe</h2>
+                            <p class="padding">的照片</p>
+                            <br><p>11分钟前</p>
+                            <div style="width:14%; position: absolute;  right: 20px; top: 20px;"><img style="width:100%"
+                                                                                                      src="images/img08.jpg">
+                            </div>
+                        </ion-item>
+
+                    </ion-list>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="私信" icon-off="ion-ios-email-outline" icon-on="ion-ios-email">
+            <ion-view>
+                <ion-content>
+                    <ion-list>
+                        <ion-item class="item-avatar">
+                            <img src="images/avatars/avatar6.jpg">
+                            <h4>Dosnap</h4><p class="font10">13天前</p>
+                            <br>
+                            <p>您好啊，欢迎您！</p>
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

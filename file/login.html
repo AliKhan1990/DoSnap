@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dosnap Login</title>
+    <meta name="viewport" content="maximum-scale=1,user-scale=no,width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/ionic.min.css">
+    <style>
+        div[name="reset"] a{
+            text-decoration: none;
+            color:white;
+        }
+        div[name="reset"] a:hover{
+            border: 1px solid #e4eee6;
+        }
+        body{
+            background-image: url("images/mobile.jpg");
+            background-size: cover;
+        }
+    </style>
+    <script src="../../lib/js/ionic.bundle.min.js"></script>
+    <script>
+        var MyLabel = angular.module("MyLabel",["ionic"]);
+        MyLabel.controller("MyCtrl",function($scope){
+            $scope.data = {
+                email:"",
+                password:null
+            }
+        });
+    </script>
+</head>
+<body ng-app="MyLabel" ng-controller="MyCtrl">
+
+<ion-header-bar class="bar-header bar-calm"><h3 class="title">Dosnap · 多色</h3></ion-header-bar>
+<div class="ion-content has-header overflow-scroll">
+    <div class="list list-inset login">
+        <div class="item item-input">
+            <input type="email" ng-model="data.email"placeholder="用户名:">
+        </div>
+        <div class="item">
+            <label class=" item-input-inset">
+                <input type="password" ng-model="data.password" ng-minlength="8"  placeholder="密码:">
+                <a class="col-offset-66 button button-small button-light item-input-wrapper item-borderless">忘记密码</a>
+            </label>
+
+
+        </div>
+    </div>
+    <a class="button button-calm button-block" href="index.html" ng-disabled="!data.email || !data.password">登陆</a>
+    <div name="reset" class="reset text-center">
+        <!--<a href="#" class="col">重置密码</a>-->
+        <button href="#" class="button button-balanced button-block text-center">其他方式登陆</button>
+    </div>
+</div>
+
+<ion-footer-bar class="bar-calm"><h3 class="title">给生活多一点色彩</h3></ion-footer-bar>
+</body>
+</html>
